@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 const BlogItem = ({ selectedBlog, setSelectedBlog, allBlogs, setAllBlogs }) => {
   const createBlog = async () => {
     try {
-      const response = await axios.post("/api/blogs", selectedBlog);
+      const response = await axios.post(`${process.env.REACT_APP_API}/api/blogs`, selectedBlog);
 
       if (response.status === 201) {
         const newBlog = response.data;

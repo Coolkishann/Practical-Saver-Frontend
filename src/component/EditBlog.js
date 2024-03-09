@@ -21,7 +21,7 @@ const EditBlog = ({ allBlogs }) => {
 
   const updateSelectedBlog = async () => {
     try {
-      const response = await axios.put(`/api/blogs/${id}`, editedBlog);
+      const response = await axios.put(`${process.env.REACT_APP_API}/api/blogs/${id}`, editedBlog);
 
       if (response.status === 200) {
         toast.success("Blog updated successfully");

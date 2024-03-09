@@ -83,7 +83,7 @@ const App = () => {
   useEffect(() => {
     const fetchAllBlogs = async () => {
       try {
-        const response = await axios.get("/api/blogs");
+        const response = await axios.get(`${process.env.REACT_APP_API}/api/blogs`);
         if (response.status === 200) {
           setAllBlogs(response.data);
         } else {

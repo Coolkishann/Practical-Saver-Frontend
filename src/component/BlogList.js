@@ -109,6 +109,7 @@ const BlogList = ({ allBlogs, setAllBlogs, setSelectedBlog }) => {
     ? allBlogs.filter((blog) => blog.subject === filterSubject)
     : allBlogs;
 
+
   return (
     <>
       <NavLink to="/">
