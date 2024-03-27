@@ -28,7 +28,7 @@ const BlogItem = ({ selectedBlog, setSelectedBlog, allBlogs, setAllBlogs }) => {
 
   return (
     <div className="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
-      <h2 className="text-2xl font-semibold mb-4">Create Blog</h2>
+      <h2 className="text-2xl font-semibold mb-4">Save New Practical</h2>
       <label
         htmlFor="subject"
         className="block text-sm font-medium text-gray-700 mb-2"
@@ -48,15 +48,14 @@ const BlogItem = ({ selectedBlog, setSelectedBlog, allBlogs, setAllBlogs }) => {
         <option value="">Select Subject</option>
         <option value="IoT">IoT</option>
         <option value="TOC">TOC</option>
-        <option value="SE">SE</option>
-        <option value="RM">RM</option>
-        <option value="DSA">DSA</option>
+        <option value="RM">AAD</option>
+        <option value="DSA">ANDR</option>
       </select>
       <label
         htmlFor="blogHead"
         className="block text-sm font-medium text-gray-700 mb-2"
       >
-        Blog Head:
+        Practical Aim :
       </label>
       <input
         type="text"
@@ -73,7 +72,7 @@ const BlogItem = ({ selectedBlog, setSelectedBlog, allBlogs, setAllBlogs }) => {
         htmlFor="blogData"
         className="block text-sm font-medium text-gray-700 mb-2"
       >
-        Blog Data:
+        Code :
       </label>
       <textarea
         id="blogData"
@@ -95,7 +94,7 @@ const BlogItem = ({ selectedBlog, setSelectedBlog, allBlogs, setAllBlogs }) => {
       </button>
       <NavLink to="/blogs">
         <button className="bg-blue-500 ml-8 text-white px-4 py-2 rounded">
-          Blog List
+          See All Practical
         </button>
       </NavLink>
     </div>

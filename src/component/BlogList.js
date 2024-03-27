@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 // import axios from "axios"; // Add this line
 // import toast from "react-hot-toast";
@@ -44,11 +42,10 @@ const BlogList = ({ allBlogs, setAllBlogs, setSelectedBlog }) => {
           className="p-2 border border-gray-300 rounded mb-4"
         >
           <option value="">Select Subject : All</option>
-          <option value="IoT">IoT</option>
+          <option value="DSA">ANDR</option>
+          <option value="RM">AAD</option>
           <option value="TOC">TOC</option>
-          <option value="SE">SE</option>
-          <option value="RM">RM</option>
-          <option value="DSA">DSA</option>
+          <option value="IoT">IOT</option>
         </select>
       </div>
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
@@ -60,8 +57,8 @@ const BlogList = ({ allBlogs, setAllBlogs, setSelectedBlog }) => {
             >
               <p>
                 <strong>Subject:</strong> {blog.subject} <br />
-                <strong>Blog Head:</strong> {blog.blogHead} <br />
-                <strong>Blog Data:</strong>{" "}
+                <strong>AIM:</strong> {blog.blogHead} <br />
+                <strong>CODE:</strong>{" "}
                 {blog.blogData.length > 35
                   ? blog.blogData.substring(0, 35) + "......"
                   : blog.blogData}
