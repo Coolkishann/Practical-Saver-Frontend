@@ -46,10 +46,10 @@ const BlogItem = ({ selectedBlog, setSelectedBlog, allBlogs, setAllBlogs }) => {
         required
       >
         <option value="">Select Subject</option>
-        <option value="IoT">IoT</option>
-        <option value="TOC">TOC</option>
-        <option value="RM">AAD</option>
-        <option value="DSA">ANDR</option>
+        <option value="IoT">ANDR</option>
+        <option value="TOC">AAD</option>
+        <option value="RM">TOC</option>
+        <option value="DSA">IOT</option>
       </select>
       <label
         htmlFor="blogHead"
