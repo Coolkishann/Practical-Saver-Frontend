@@ -64,12 +64,13 @@
 
 // export default App;
 
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BlogList from "./component/BlogList";
 import BlogItem from "./component/BlogItem";
-import EditBlog from "./component/EditBlog";
+// import EditBlog from "./component/EditBlog";
 import Open from "./component/Open";
 
 const App = () => {
@@ -113,7 +114,7 @@ const App = () => {
             }
           />
           <Route
-            path="/blogs"
+            path="/pracs"
             element={
               <BlogList
                 allBlogs={allBlogs}
@@ -122,12 +123,12 @@ const App = () => {
               />
             }
           />
-          <Route
-            path="/blogs/:id/edit" // Route to edit blog page
+          {/* <Route
+            path="/pracs/:id/edit" // Route to edit blog page
             element={<EditBlog allBlogs={allBlogs} />} // Pass allBlogs to EditBlog
-          />
+          /> */}
           <Route
-            path="/blogs/:id" // Route to edit blog page
+            path="/pracs/:id" // Route to edit blog page
             element={<Open allBlogs={allBlogs} />} // Pass allBlogs to EditBlog
           />
         </Routes>

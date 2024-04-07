@@ -41,16 +41,16 @@ const BlogList = ({ allBlogs, setAllBlogs, setSelectedBlog }) => {
           onChange={(e) => setFilterSubject(e.target.value)}
           className="p-2 border border-gray-300 rounded mb-4"
         >
-          <option value="">Select Subject : All</option>
-          <option value="DSA">ANDR</option>
-          <option value="RM">AAD</option>
+          <option value="all">Select Subject : All</option>
+          <option value="IOT">IOT</option>
           <option value="TOC">TOC</option>
-          <option value="IoT">IOT</option>
+          <option value="AAD">AAD</option>
+          <option value="ANDR">ANDR</option>
         </select>
       </div>
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {filteredBlogs.map((blog) => (
-          <Link to={`/blogs/${blog._id}`}>
+          <Link to={`/pracs/${blog._id}`}>
             <div
               key={blog._id}
               className="bg-white relative p-6 rounded-md shadow-md"

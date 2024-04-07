@@ -25,7 +25,7 @@ const Open = ({ allBlogs }) => {
 
   return (
     <div className="container mx-auto mt-8 p-4">
-      <h2 className="text-2xl font-semibold mb-4">Edit Blog</h2>
+      <h2 className="text-2xl font-semibold mb-4">Practical</h2>
       <label
         htmlFor="subject"
         className="block text-sm font-medium text-gray-700 mb-2"
@@ -45,7 +45,7 @@ const Open = ({ allBlogs }) => {
         htmlFor="blogHead"
         className="block text-sm font-medium text-gray-700 mb-2"
       >
-        Blog Head:
+        Aim :
       </label>
       <input
         type="text"
@@ -60,7 +60,7 @@ const Open = ({ allBlogs }) => {
         htmlFor="blogData"
         className="block text-sm font-medium text-gray-700 mb-2"
       >
-        Blog Data:
+        Code:
       </label>
       <div className="relative">
         <textarea

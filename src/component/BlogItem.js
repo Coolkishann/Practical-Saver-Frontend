@@ -7,7 +7,10 @@ import { NavLink } from "react-router-dom";
 const BlogItem = ({ selectedBlog, setSelectedBlog, allBlogs, setAllBlogs }) => {
   const createBlog = async () => {
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API}/api/blogs`, selectedBlog);
+      const response = await axios.post(
+        `${process.env.REACT_APP_API}/api/blogs`,
+        selectedBlog
+      );
 
       if (response.status === 201) {
         const newBlog = response.data;
@@ -17,9 +20,9 @@ const BlogItem = ({ selectedBlog, setSelectedBlog, allBlogs, setAllBlogs }) => {
           blogHead: "",
           blogData: "",
         });
-        toast.success("Blog Created successfully");
+        toast.success("Practical saved successfully");
       } else {
-        toast.error("Failed to create blog");
+        toast.error("Failed to save practical");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -46,10 +49,10 @@ const BlogItem = ({ selectedBlog, setSelectedBlog, allBlogs, setAllBlogs }) => {
         required
       >
         <option value="">Select Subject</option>
-        <option value="IoT">ANDR</option>
-        <option value="TOC">AAD</option>
-        <option value="RM">TOC</option>
-        <option value="DSA">IOT</option>
+        <option value="IoT">IOT</option>
+        <option value="TOC">TOC</option>
+        <option value="AAD">AAD</option>
+        <option value="ANDR">ANDR</option>
       </select>
       <label
         htmlFor="blogHead"
@@ -92,7 +95,7 @@ const BlogItem = ({ selectedBlog, setSelectedBlog, allBlogs, setAllBlogs }) => {
       >
         Submit
       </button>
-      <NavLink to="/blogs">
+      <NavLink to="/pracs">
         <button className="bg-blue-500 ml-8 text-white px-4 py-2 rounded">
           See All Practical
         </button>
