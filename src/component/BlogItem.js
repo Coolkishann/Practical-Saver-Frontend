@@ -95,7 +95,7 @@ const BlogItem = ({ selectedBlog, setSelectedBlog, allBlogs, setAllBlogs }) => {
       >
         Submit
       </button>
-      <NavLink to="/pracs">
+      <NavLink to="/blogs">
         <button className="bg-blue-500 ml-8 text-white px-4 py-2 rounded">
           See All Practical
         </button>

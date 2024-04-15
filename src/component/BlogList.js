@@ -50,7 +50,7 @@ const BlogList = ({ allBlogs, setAllBlogs, setSelectedBlog }) => {
       </div>
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {filteredBlogs.map((blog) => (
-          <Link to={`/pracs/${blog._id}`}>
+          <Link to={`/blogs/${blog._id}`}>
             <div
               key={blog._id}
               className="bg-white relative p-6 rounded-md shadow-md"

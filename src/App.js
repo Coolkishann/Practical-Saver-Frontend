@@ -84,7 +84,7 @@ const App = () => {
   useEffect(() => {
     const fetchAllBlogs = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API}/api/pracs`);
+        const response = await axios.get(`${process.env.REACT_APP_API}/api/blogs`);
         if (response.status === 200) {
           setAllBlogs(response.data);
         } else {
@@ -114,7 +114,7 @@ const App = () => {
             }
           />
           <Route
-            path="/pracs"
+            path="/blogs"
             element={
               <BlogList
                 allBlogs={allBlogs}
@@ -124,11 +124,11 @@ const App = () => {
             }
           />
           {/* <Route
-            path="/pracs/:id/edit" // Route to edit blog page
+            path="/blogs/:id/edit" // Route to edit blog page
             element={<EditBlog allBlogs={allBlogs} />} // Pass allBlogs to EditBlog
           /> */}
           <Route
-            path="/pracs/:id" // Route to edit blog page
+            path="/blogs/:id" // Route to edit blog page
             element={<Open allBlogs={allBlogs} />} // Pass allBlogs to EditBlog
           />
         </Routes>
