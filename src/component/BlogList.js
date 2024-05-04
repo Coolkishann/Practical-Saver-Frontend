@@ -6,22 +6,22 @@ import { Link } from "react-router-dom"; // Import Link
 const BlogList = ({ allBlogs, setAllBlogs, setSelectedBlog }) => {
   const [filterSubject, setFilterSubject] = useState(""); // State for selected subject filter
 
-  // const deleteSelectedBlog = async (id) => {
-  //   try {
-  //     const response = await axios.delete(
-  //       `/api/blogs/${id}`
-  //     );
+  const deleteSelectedBlog = async (id) => {
+    try {
+      const response = await axios.delete(
+        `/api/blogs/${id}`
+      );
 
-  //     if (response.status === 200) {
-  //       setAllBlogs(allBlogs.filter((blog) => blog._id !== id));
-  //       toast.success("Blog deleted successfully");
-  //     } else {
-  //       toast.error("Failed to delete blog");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //   }
-  // };
+      if (response.status === 200) {
+        setAllBlogs(allBlogs.filter((blog) => blog._id !== id));
+        toast.success("Blog deleted successfully");
+      } else {
+        toast.error("Failed to delete blog");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   // Filter blogs by subject
   const filteredBlogs = filterSubject
@@ -30,11 +30,11 @@ const BlogList = ({ allBlogs, setAllBlogs, setSelectedBlog }) => {
 
   return (
     <>
-      {/* <NavLink to="/">
+    <NavLink to="/">
         <button className="bg-blue-500 ml-8 text-white px-4 py-2 rounded">
           Back
         </button>
-      </NavLink> */}
+      </NavLink> 
       <div className="mt-8">
         <select
           value={filterSubject}
@@ -63,18 +63,18 @@ const BlogList = ({ allBlogs, setAllBlogs, setSelectedBlog }) => {
                   ? blog.blogData.substring(0, 35) + "......"
                   : blog.blogData}
               </p>
-              {/* <Link
+               <Link
                 to={`/blogs/${blog._id}/edit`}
                 className="bg-blue-500 top-2 right-2 text-white px-4 py-2 absolute mt-1  rounded "
               >
                 Edit
-              </Link> */}
-              {/* <button
+              </Link> 
+               <button
                 onClick={() => deleteSelectedBlog(blog._id)}
                 className="bg-red-500 ml-8 text-white px-4 py-2 rounded mt-2"
               >
                 Delete Blog
-              </button> */}
+              </button> 
             </div>
           </Link>
         ))}
