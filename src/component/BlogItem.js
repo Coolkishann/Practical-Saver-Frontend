@@ -44,24 +44,23 @@ const BlogItem = ({ selectedBlog, setSelectedBlog, allBlogs, setAllBlogs }) => {
       {!showHello && (
         <>
         <div className="flex items-center justify-center h-screen">
-  <div className="bg-white p-8 rounded-lg shadow-lg">
-    <input 
+      <div className="bg-white p-8 rounded-lg shadow-lg">
+      <input 
       type="password" 
       value={password} 
       onChange={(e) => setPassword(e.target.value)} 
       id="pass" 
       className="block w-full px-4 py-2 mb-4 border border-gray-300 rounded focus:outline-none focus:border-blue-400"
-    />
-    <button 
+      />
+     <button 
       onClick={handleCheckPassword} 
       className="block w-full px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
-    >
+      >
       Check Password
-    </button>
-  </div>
+      </button>
+    </div>
 </div>
-
-        </>
+      </>
       )}
     
       {showHello && (

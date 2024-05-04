@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-// import axios from "axios"; // Add this line
-// import toast from "react-hot-toast";
-import { Link } from "react-router-dom"; // Import Link
+import axios from "axios"; // Add this line
+import toast from "react-hot-toast";
+import { Link , NavLink } from "react-router-dom"; // Import Link
 
 const BlogList = ({ allBlogs, setAllBlogs, setSelectedBlog }) => {
   const [filterSubject, setFilterSubject] = useState(""); // State for selected subject filter
@@ -9,7 +9,7 @@ const BlogList = ({ allBlogs, setAllBlogs, setSelectedBlog }) => {
   const deleteSelectedBlog = async (id) => {
     try {
       const response = await axios.delete(
-        `/api/blogs/${id}`
+        `/blogs/${id}`
       );
 
       if (response.status === 200) {
@@ -23,18 +23,17 @@ const BlogList = ({ allBlogs, setAllBlogs, setSelectedBlog }) => {
     }
   };
 
-  // Filter blogs by subject
   const filteredBlogs = filterSubject
     ? allBlogs.filter((blog) => blog.subject === filterSubject)
     : allBlogs;
 
   return (
     <>
-    <NavLink to="/">
+      <NavLink to="/">
         <button className="bg-blue-500 ml-8 text-white px-4 py-2 rounded">
           Back
         </button>
-      </NavLink> 
+      </NavLink>
       <div className="mt-8">
         <select
           value={filterSubject}
@@ -49,35 +48,35 @@ const BlogList = ({ allBlogs, setAllBlogs, setSelectedBlog }) => {
         </select>
       </div>
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        {filteredBlogs.map((blog) => (
-          <Link to={`/blogs/${blog._id}`}>
-            <div
-              key={blog._id}
-              className="bg-white relative p-6 rounded-md shadow-md"
-            >
-              <p>
-                <strong>Subject:</strong> {blog.subject} <br />
-                <strong>AIM:</strong> {blog.blogHead} <br />
-                <strong>CODE:</strong>{" "}
-                {blog.blogData.length > 35
-                  ? blog.blogData.substring(0, 35) + "......"
-                  : blog.blogData}
-              </p>
-               <Link
-                to={`/blogs/${blog._id}/edit`}
-                className="bg-blue-500 top-2 right-2 text-white px-4 py-2 absolute mt-1  rounded "
-              >
-                Edit
-              </Link> 
-               <button
-                onClick={() => deleteSelectedBlog(blog._id)}
-                className="bg-red-500 ml-8 text-white px-4 py-2 rounded mt-2"
-              >
-                Delete Blog
-              </button> 
-            </div>
-          </Link>
-        ))}
+      {filteredBlogs.map((blog) => (
+  <Link key={blog._id} to={`/blogs/${blog._id}`}>
+    <div
+      className="bg-white relative p-6 rounded-md shadow-md"
+    >
+      <p>
+        <strong>Subject:</strong> {blog.subject} <br />
+        <strong>AIM:</strong> {blog.blogHead} <br />
+        <strong>CODE:</strong>{" "}
+        {blog.blogData.length > 35
+          ? blog.blogData.substring(0, 35) + "......"
+          : blog.blogData}
+      </p>
+      <Link
+        to={`/blogs/${blog._id}/edit`}
+        className="bg-blue-500 top-2 right-2 text-white px-4 py-2 absolute mt-1  rounded "
+      >
+        Edit
+      </Link>
+      <button
+        onClick={() => deleteSelectedBlog(blog._id)}
+        className="bg-red-500 ml-8 text-white px-4 py-2 rounded mt-2"
+      >
+        Delete Blog
+      </button>
+    </div>
+  </Link>
+))}
+
       </div>
     </>
   );
