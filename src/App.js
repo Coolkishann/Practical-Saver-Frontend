@@ -1,10 +1,11 @@
 
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BlogList from "./component/BlogList";
 import BlogItem from "./component/BlogItem";
-// import EditBlog from "./component/EditBlog";
+import EditBlog from "./component/EditBlog";
 import Open from "./component/Open";
 
 const App = () => {
@@ -57,7 +58,7 @@ const App = () => {
               />
             }
           />
-           <Route
+          <Route
             path="/blogs/:id/edit" // Route to edit blog page
             element={<EditBlog allBlogs={allBlogs} />} // Pass allBlogs to EditBlog
           /> 
